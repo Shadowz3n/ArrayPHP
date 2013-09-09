@@ -2,7 +2,12 @@
 	class genericArray {
 		
 		public function __construct(){
-			return Request::current()->post();
+			try{
+				return Request::current()->post();
+			}
+			catch(Exception $e){
+				return $_POST;
+			}
 		}
 		
 		/* Para substituir o foreach */
