@@ -38,4 +38,3 @@
 			return var_dump($post);
 		}
 	}
-?>
