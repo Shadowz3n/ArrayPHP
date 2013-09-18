@@ -1,7 +1,7 @@
 <?php 
 	class genericArray {
 		
-		public function __construct(){
+		public static function __construct(){
 			try{
 				return Request::current()->post();
 			}
@@ -11,7 +11,7 @@
 		}
 		
 		/* Para substituir o foreach */
-		public function foreachArray($post){
+		public static function foreachArray($post){
 			if(!isset($post)){
 				$post = self::__construct();
 			}
@@ -24,12 +24,12 @@
 		}
 		
 		/* Procura um valor de array e retorna sua Key ou Value */
-		public function searchArray($search, $array){
+		public static function searchArray($search, $array){
 			return array_search($search, $array, true);
 		}
 		
 		/* Para vizualizar arrays */
-		public function dumpArray($post)
+		public static function dumpArray($post)
 		{
 			if(!isset($post)){
 				$post = self::__construct();
